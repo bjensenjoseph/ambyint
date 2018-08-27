@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { load as loadLocations } from './MapReducer';
 import MapView from './MapView';
 import ListView from './ListView';
-import { LinearProgress, RaisedButton, FloatingActionButton } from 'material-ui';
+import { LinearProgress, RaisedButton } from 'material-ui';
 
 class MapContainer extends React.Component {
 

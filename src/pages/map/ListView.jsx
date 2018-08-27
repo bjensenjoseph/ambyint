@@ -18,16 +18,18 @@ export default class ListView extends React.Component {
   render() {
     return (
       <div>
-        <AutoComplete
-          floatingLabelText="Search locations..."
-          filter={AutoComplete.fuzzyFilter}
-          dataSource={this.props.locations}
-          dataSourceConfig={{ text: 'formatted_address', value: 'formatted_address' }}
-          maxSearchResults={10}
-          fullWidth
-          onNewRequest={(result) => this.setState({ locations: [result] })}
-          onUpdateInput={() => this.setState({ locations: this.props.locations })}
-        />
+        <div style={{ width: '90%', margin: '10px auto' }}>
+          <AutoComplete
+            floatingLabelText="Search locations..."
+            filter={AutoComplete.fuzzyFilter}
+            dataSource={this.props.locations}
+            dataSourceConfig={{ text: 'formatted_address', value: 'formatted_address' }}
+            maxSearchResults={10}
+            fullWidth
+            onNewRequest={(result) => this.setState({ locations: [result] })}
+            onUpdateInput={() => this.setState({ locations: this.props.locations })}
+          />
+        </div>
         <Table>
           <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
             <TableRow>
