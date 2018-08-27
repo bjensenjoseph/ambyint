@@ -3,7 +3,7 @@ module.exports = (app) => {
   const fs = require('fs');
   const _ = require('lodash');
   const googleService = require('./GoogleService');
-  const { chunk, flatten } = _;
+  const { chunk, flatten, uniqBy } = _;
 
   app.get('/api/locations', (req, res) => {
     console.log('Requesting location data...');
@@ -15,7 +15,8 @@ module.exports = (app) => {
       // convert csv file to json
       return csvToJson().fromFile(csvFilePath).then(locations => {
         // chunk location array into sets of 50 to avoid google api query limit
-        const locChunks = chunk(locations, 50);
+        const uniqueLocations = uniqBy(locations, 'Address');
+        const locChunks = chunk(uniqueLocations, 50);
         let finalfilteredResults = [];
         // iterate over chunks of locations and send to google for geocoding every 2 seconds
         for (let i = 0; i < locChunks.length; i++) {
