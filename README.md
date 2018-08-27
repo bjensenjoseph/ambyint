@@ -4,6 +4,11 @@
 2. Run `npm start`
 3. Point browser to `http://localhost:9000`
 
+Alternatively you can start the client/server in dev mode
+1. Run 'npm run dev' for client dev mode
+2. Run 'npm run dev-server' for server dev mode
+3. Point browser to `http://localhost:3000`
+
 * Node version: 8.6.0
 
 

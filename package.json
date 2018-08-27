@@ -40,7 +40,7 @@
     "uuid": "^3.1.0"
   },
   "scripts": {
-    "dev-server": "npm run build && nodemon ./server",
+    "dev-server": "nodemon ./server",
     "dev": "react-scripts start",
     "start": "npm run build && node ./server",
     "server": "nodemon ./server",
