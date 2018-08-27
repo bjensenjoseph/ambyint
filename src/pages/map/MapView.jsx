@@ -38,7 +38,6 @@ export class MapView extends React.Component {
       activeMarker: marker,
       showingInfoWindow: true
     });
-    console.log('marker', props);
   }
 
   openSearch() {

@@ -1,8 +1,9 @@
 import axios from 'axios';
+import config from '../../config/client';
 
 class LocationService {
   constructor() {
-    this.apiUrl = 'http://localhost:9000/api/';
+    this.apiUrl = config.apiUrl;
   }
 
   get(url) {
